@@ -53,7 +53,7 @@
     "vite-prod": "yarn run tailwindcss:build && yarn run tailwindcss:cqs:build && NODE_OPTIONS=\"${NODE_OPTIONS:=--max-old-space-size=8000}\" NODE_ENV=production vite build"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.10",
+    "@apollo/client": "^3.14.0",
     "@babel/core": "^7.23.7",
     "@babel/preset-env": "^7.23.7",
     "@csstools/postcss-global-data": "^2.1.1",
