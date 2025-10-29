@@ -188,7 +188,7 @@ gem 'hashie', '~> 5.0.0', feature_category: :shared
 gem 'kaminari', '~> 1.2.2', feature_category: :shared
 
 # HAML
-gem 'hamlit', '~> 3.0.0', feature_category: :shared
+gem 'hamlit', '~> 4.0.0', feature_category: :shared
 
 # Files attachments
 gem 'carrierwave', '~> 1.3', feature_category: :shared
@@ -753,7 +753,7 @@ gem 'duo_api', '~> 1.3', feature_category: :system_access
 
 gem 'gitlab-sdk', '~> 0.3.0', feature_category: :application_instrumentation
 
-gem 'paper_trail', '~> 16.0', feature_category: :shared
+gem 'paper_trail', '~> 17.0', '>= 17.0.0', feature_category: :shared
 
 gem "i18n_data", "~> 0.13.1", feature_category: :system_access
 
