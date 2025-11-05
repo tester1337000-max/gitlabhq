@@ -218,7 +218,7 @@ gem 'gitlab-fog-azure-rm', '~> 2.3.0', require: 'fog/azurerm', feature_category:
 # Need this specific version of google-apis-storage_v1 so that fog-google will utilize the updated list_objects with
 # match_glob support in google-apis-core 0.11.1. Because of this we also have to bump google-cloud-storage to 1.45.0.
 gem 'google-apis-storage_v1', '~> 0.29', feature_category: :shared
-gem 'google-cloud-storage', '~> 1.57.0', feature_category: :shared
+gem 'google-cloud-storage', '~> 1.57.1', feature_category: :shared
 # We need >= 0.11.1 because that's when match_glob support is added to list_objects
 gem 'google-apis-core', '~> 0.18.0', '>= 0.18.0', feature_category: :shared
 gem 'google-apis-compute_v1', '~> 0.129.0', feature_category: :shared
@@ -743,7 +743,7 @@ gem "nkf", "~> 0.2.0", feature_category: :shared
 # This is locked to 0.6.0 because we patch Net::HTTP#connect in
 # gems/gitlab-http/lib/net_http/connect_patch.rb.
 # It can be upgraded but care must be taken to preserve the patch.
-gem 'net-http', '= 0.6.0', feature_category: :shared
+gem 'net-http', '= 0.7.0', feature_category: :shared
 # This is locked to 0.13.0 because the default parser changes from RFC2396 to RFC3986,
 # which can be removed after Rails 7.2 upgrade
 # See https://gitlab.com/gitlab-org/gitlab/-/merge_requests/173142#note_2277952450
