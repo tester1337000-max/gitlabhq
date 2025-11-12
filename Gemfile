@@ -116,7 +116,7 @@ gem 'openid_connect', '~> 2.3.0', feature_category: :system_access
 # See gem README.md
 gem 'omniauth-salesforce', '~> 1.0.5', path: 'vendor/gems/omniauth-salesforce', feature_category: :system_access
 gem 'omniauth-atlassian-oauth2', '~> 0.2.0', feature_category: :system_access
-gem 'rack-oauth2', '~> 2.2.1', feature_category: :system_access
+gem 'rack-oauth2', '~> 2.3.0', feature_category: :system_access
 gem 'jwt', '~> 2.10.0', feature_category: :system_access
 
 # Kerberos authentication. EE-only
@@ -166,7 +166,7 @@ gem 'rack-cors', '~> 2.0.1', require: 'rack/cors', feature_category: :shared
 # GraphQL API
 gem 'graphql', '2.5.11', feature_category: :api
 gem 'graphql-docs', '~> 5.2.0', group: [:development, :test], feature_category: :api
-gem 'apollo_upload_server', '~> 2.1.6', feature_category: :api
+gem 'apollo_upload_server', '~> 2.1.7', feature_category: :api
 
 # Cells
 gem 'gitlab-topology-service-client', '~> 0.1',
