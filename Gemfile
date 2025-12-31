@@ -306,7 +306,7 @@ gem 'gitlab-sidekiq-fetcher',
 gem 'fugit', '~> 1.11.1', feature_category: :continuous_integration
 
 # HTTP requests
-gem 'httparty', '~> 0.23.0', feature_category: :shared
+gem 'httparty', '~> 0.24.0', feature_category: :shared
 
 # Colored output to console
 gem 'rainbow', '~> 3.0', feature_category: :shared
@@ -604,7 +604,7 @@ group :test do
   # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
   gem 'derailed_benchmarks', require: false, feature_category: :shared
 
-  gem 'gitlab_quality-test_tooling', '~> 2.20.0', require: false, feature_category: :tooling
+  gem 'gitlab_quality-test_tooling', '~> 2.20.1', require: false, feature_category: :tooling
 end
 
 gem 'octokit', '~> 9.0', feature_category: :importers
