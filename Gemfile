@@ -73,8 +73,8 @@ gem 'pg', '~> 1.6.1', feature_category: :database
 
 gem 'rugged', '~> 1.6', feature_category: :gitaly
 
-gem 'faraday', '~> 2', feature_category: :shared
-gem 'faraday-retry', '~> 2', feature_category: :shared
+gem 'faraday', '~> 2', '>= 2.14.1', feature_category: :shared
+gem 'faraday-retry', '~> 2', '>= 2.3.0', feature_category: :shared
 # Logger is a dependency of Faraday, but Logger 1.6.0 does not work with Chef.
 gem 'logger', '~> 1.7.0', feature_category: :shared
 
@@ -99,12 +99,12 @@ gem 'ruby-saml', '~> 1.18', feature_category: :system_access
 gem 'omniauth-saml', '~> 2.2.1', feature_category: :system_access
 gem 'omniauth', '~> 2.1.0', feature_category: :system_access
 gem 'omniauth-auth0', '~> 3.1', feature_category: :system_access
-gem 'omniauth-azure-activedirectory-v2', '~> 2.0', feature_category: :system_access
+gem 'omniauth-azure-activedirectory-v2', '~> 2.0', '>= 2.0.1', feature_category: :system_access
 gem 'omniauth-alicloud', '~> 3.0.0', feature_category: :system_access
 gem 'omniauth-github', '2.0.1', feature_category: :system_access
 # See vendor/gems/omniauth-gitlab/README.md
 gem 'omniauth-gitlab', '~> 4.0.0', path: 'vendor/gems/omniauth-gitlab', feature_category: :system_access
-gem 'omniauth-google-oauth2', '~> 1.1', feature_category: :system_access
+gem 'omniauth-google-oauth2', '~> 1.1', '>= 1.1.2', feature_category: :system_access
 gem 'omniauth-oauth2-generic', '~> 0.2.2', feature_category: :system_access
 gem 'omniauth-shibboleth-redux', '~> 2.0', require: 'omniauth-shibboleth', feature_category: :system_access
 # See vendor/gems/omniauth_crowd/README.md
@@ -116,7 +116,7 @@ gem 'openid_connect', '~> 2.3.0', feature_category: :system_access
 # See gem README.md
 gem 'omniauth-salesforce', '~> 1.0.5', path: 'vendor/gems/omniauth-salesforce', feature_category: :system_access
 gem 'omniauth-atlassian-oauth2', '~> 0.2.0', feature_category: :system_access
-gem 'rack-oauth2', '~> 2.2.1', feature_category: :system_access
+gem 'rack-oauth2', '~> 2.3.0', feature_category: :system_access
 gem 'jwt', '~> 2.10.0', feature_category: :system_access
 
 # Kerberos authentication. EE-only
@@ -138,7 +138,7 @@ gem 'attr_encrypted', '~> 4.2', feature_category: :shared
 gem 'validates_hostname', '~> 1.0.13', feature_category: :pages
 gem 'rubyzip', '~> 2.4.0', require: 'zip', feature_category: :pages
 # GitLab Pages letsencrypt support
-gem 'acme-client', '~> 2.0.19', feature_category: :pages
+gem 'acme-client', '~> 2.0.26', feature_category: :pages
 
 # Browser detection
 gem 'browser', '~> 5.3.1', feature_category: :shared
@@ -202,7 +202,7 @@ gem 'prawn-svg', feature_category: :vulnerability_management
 # for backups
 gem 'fog-aws', '~> 3.26', feature_category: :shared
 gem 'fog-core', '~> 2.5', feature_category: :shared
-gem 'fog-google', '~> 1.25', require: 'fog/google', feature_category: :shared
+gem 'fog-google', '~> 1.26', '>= 1.26.0', require: 'fog/google', feature_category: :shared
 gem 'fog-local', '~> 0.8', feature_category: :shared
 # NOTE:
 # the fog-aliyun gem since v0.4 pulls in aliyun-sdk transitively, which monkey-patches
@@ -211,35 +211,35 @@ gem 'fog-local', '~> 0.8', feature_category: :shared
 # We may want to update this dependency if this is ever addressed upstream, e.g. via
 # https://github.com/aliyun/aliyun-oss-ruby-sdk/pull/93
 gem 'fog-aliyun', '~> 0.4', feature_category: :shared
-gem 'gitlab-fog-azure-rm', '~> 2.3.0', require: 'fog/azurerm', feature_category: :shared
+gem 'gitlab-fog-azure-rm', '~> 2.4.0', require: 'fog/azurerm', feature_category: :shared
 
 # for Google storage
 
 # Need this specific version of google-apis-storage_v1 so that fog-google will utilize the updated list_objects with
 # match_glob support in google-apis-core 0.11.1. Because of this we also have to bump google-cloud-storage to 1.45.0.
-gem 'google-apis-storage_v1', '~> 0.29', feature_category: :shared
-gem 'google-cloud-storage', '~> 1.57.0', feature_category: :shared
+gem 'google-apis-storage_v1', '~> 0.57', '>= 0.57.0', feature_category: :shared
+gem 'google-cloud-storage', '~> 1.57.1', feature_category: :shared
 # We need >= 0.11.1 because that's when match_glob support is added to list_objects
-gem 'google-apis-core', '~> 0.18.0', '>= 0.18.0', feature_category: :shared
-gem 'google-apis-compute_v1', '~> 0.129.0', feature_category: :shared
-gem 'google-apis-container_v1', '~> 0.100.0', feature_category: :shared
-gem 'google-apis-container_v1beta1', '~> 0.90.0', feature_category: :shared
-gem 'google-apis-cloudbilling_v1', '~> 0.22.0', feature_category: :shared
-gem 'google-apis-cloudresourcemanager_v1', '~> 0.31.0', feature_category: :shared
-gem 'google-apis-iam_v1', '~> 0.73.0', feature_category: :shared
-gem 'google-apis-serviceusage_v1', '~> 0.28.0', feature_category: :shared
-gem 'google-apis-sqladmin_v1beta4', '~> 0.41.0', feature_category: :shared
-gem 'google-apis-androidpublisher_v3', '~> 0.86.0', feature_category: :shared
+gem 'google-apis-core', '~> 1.0.0', feature_category: :shared
+gem 'google-apis-compute_v1', '~> 0.130.0', feature_category: :shared
+gem 'google-apis-container_v1', '~> 0.101.0', feature_category: :shared
+gem 'google-apis-container_v1beta1', '~> 0.91.0', feature_category: :shared
+gem 'google-apis-cloudbilling_v1', '~> 0.23.0', feature_category: :shared
+gem 'google-apis-cloudresourcemanager_v1', '~> 0.32.0', feature_category: :shared
+gem 'google-apis-iam_v1', '~> 0.74.0', feature_category: :shared
+gem 'google-apis-serviceusage_v1', '~> 0.29.0', feature_category: :shared
+gem 'google-apis-sqladmin_v1beta4', '~> 0.42.0', feature_category: :shared
+gem 'google-apis-androidpublisher_v3', '~> 0.87.0', feature_category: :shared
 
-gem 'googleauth', '~> 1.14', feature_category: :shared
-gem 'google-cloud-artifact_registry-v1', '~> 0.11.0', feature_category: :shared
-gem 'google-cloud-compute-v1', '~> 2.6.0', feature_category: :shared
+gem 'googleauth', '~> 1.15', '>= 1.15.0', feature_category: :shared
+gem 'google-cloud-artifact_registry-v1', '~> 0.12.0', feature_category: :shared
+gem 'google-cloud-compute-v1', '~> 2.7.0', feature_category: :shared
 
 # Seed data
 gem 'seed-fu', '~> 2.3.7', feature_category: :shared
 
 # Search
-gem 'elasticsearch-model', '~> 7.2', feature_category: :global_search
+gem 'elasticsearch-model', '~> 8.0', '>= 8.0.0', feature_category: :global_search
 gem 'elasticsearch-rails', '~> 7.2', require: 'elasticsearch/rails/instrumentation', feature_category: :global_search
 gem 'elasticsearch-api', '7.17.11', feature_category: :global_search
 gem 'aws-sdk-core', '~> 3.226.0', feature_category: :global_search
@@ -588,7 +588,7 @@ group :test do
   # Upload CI metrics to a GCP BigQuery instance
   #
   # We only use this gem in CI.
-  gem 'google-cloud-bigquery', '~> 1.0', feature_category: :tooling
+  gem 'google-cloud-bigquery', '~> 1.53', '>= 1.53.0', feature_category: :tooling
 
   gem 'shoulda-matchers', '~> 6.4.0', require: false, feature_category: :shared
   gem 'email_spec', '~> 2.3.0', feature_category: :shared
@@ -604,14 +604,14 @@ group :test do
   # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
   gem 'derailed_benchmarks', require: false, feature_category: :shared
 
-  gem 'gitlab_quality-test_tooling', '~> 2.20.0', require: false, feature_category: :tooling
+  gem 'gitlab_quality-test_tooling', '~> 2.20.1', require: false, feature_category: :tooling
 end
 
-gem 'octokit', '~> 9.0', feature_category: :importers
+gem 'octokit', '~> 10.0', '>= 10.0.0', feature_category: :importers
 # Needed by octokit: https://github.com/octokit/octokit.rb/pull/1688
 gem 'faraday-multipart', '~> 1.0', feature_category: :importers
 
-gem 'gitlab-mail_room', '~> 0.0.24', require: 'mail_room', feature_category: :shared
+gem 'gitlab-mail_room', '~> 0.1.0', require: 'mail_room', feature_category: :shared
 
 gem 'email_reply_trimmer', '~> 0.1', feature_category: :shared
 gem 'html2text', feature_category: :shared
@@ -621,7 +621,7 @@ gem 'rbtrace', '~> 0.4', require: false, feature_category: :shared
 gem 'memory_profiler', '~> 1.0', require: false, feature_category: :shared
 
 # OAuth
-gem 'oauth2', '~> 2.0', feature_category: :system_access
+gem 'oauth2', '~> 2.0', '>= 2.0.11', feature_category: :system_access
 
 # Health check
 gem 'health_check', '~> 3.0', feature_category: :shared
